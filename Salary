@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class SalaryAndShifts {
+
+	public static void main(String[] args) {
+		int sal = 0, shifts = 0, savings = 0;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Salary:");
+		sal = sc.nextInt();
+		System.out.println("Shifts");
+		shifts = sc.nextInt();
+		if(sal > 8000)
+		{
+			System.out.println("Salary too large");
+		}
+		else if(shifts < 0) 
+		{
+			System.out.println("Shifts too small");
+		}
+		else if(sal < 0) 
+		{
+			System.out.print("Salary too small");
+		} else {
+			savings = calculateSal(sal, shifts);
+			System.out.print("Savings is :"+savings);
+		}
+	}
+
+	public static int calculateSal(int salary, int shifts) {
+		int saving = 0;
+		saving = (int)(salary * 0.5 + salary * 0.02 * shifts);
+		return saving;
+	}
+}
+© 2020 GitHub, Inc.
